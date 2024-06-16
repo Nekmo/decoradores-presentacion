@@ -83,12 +83,9 @@ Python
 ======
 
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
+    :data-background-color: #333333
+    :data-transition-speed: default
+    :data-transition: fade
 
 .. revealjs-notes::
 

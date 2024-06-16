@@ -12,12 +12,9 @@ Todo sobre los decoradores
 ##########################
 
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
+    :data-background-color: #333333
+    :data-transition: none
+    :data-transition-speed: slow
 
 .. image:: images/python-logo.*
   :width: 200
@@ -32,12 +29,9 @@ Todo sobre los decoradores
 ==
 
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
+    :data-background-color: #4973ff
+    :data-transition-speed: slow
+    :data-transition: fade
 
 .. revealjs-notes::
 
@@ -48,13 +42,13 @@ Todo sobre los decoradores
 OpenSouthCode
 =============
 
+.. image:: images/opensouthcode-logo-white.*
+  :width: 800
+
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
+    :data-background-color: #4973ff
+    :data-transition-speed: default
+    :data-transition: fade
 
 .. revealjs-notes::
 
@@ -67,9 +61,9 @@ Sobre mí **Nekmo**
 ==================
 
 .. revealjs-section::
-    :data-transition: concave
-    :data-background-color: #2b5b84
-    :data-background-gradient: linear-gradient(180deg, rgba(10,59,102,1) 0%, rgba(43,91,132,1) 30%)
+    :data-background-color: #333333
+    :data-transition-speed: default
+    :data-transition: fade
 
 +------------------------------------+
 |                                    |

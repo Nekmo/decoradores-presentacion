@@ -31,6 +31,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,700);
 @import url(https://fonts.googleapis.com/css?family=Lora:700);
 @import url(https://fonts.googleapis.com/css2?family=Trocchi&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap);
 
 
 //@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css);
@@ -92,70 +93,6 @@ section.has-light-background {
   bottom: 50px;
 }
 
-.line {
-  &.grid {
-    background: $sunshine;
-  }
-
-  content: '';
-  position: fixed;
-  background: $borderColor;
-  z-index: 105;
-  &.top {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 15px;
-    @media (max-width: 840px) {
-      height: 15px;
-    }
-  }
-  &.bottom {
-    left: 0;
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    height: 15px;
-    @media (max-width: 840px) {
-      height: 15px;
-    }
-  }
-  &.left {
-    left: 0;
-    top: 0;
-    width: 15px;
-    height: 200%;
-    @media (max-width: 840px) {
-      width: 15px;
-    }
-  }
-  &.right {
-    left: auto;
-    right: 0;
-    top: 0;
-    width: 15px;
-    height: 200%;
-    @media (max-width: 840px) {
-      width: 15px;
-    }
-  }
-}
-
-body::before {
-    content: ' ';
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #f8f8f8;
-    background: url(background.png) repeat-x;
-    //background: rgba(255,255,255,1);
-    //background: linear-gradient(180deg, rgb(255, 239, 179) 0%, rgba(255,255,255,1) 25%);
-    will-change: transform;
-    z-index: -1;
-}
-
 
 // Theme template ------------------------------
 @import "./template.scss";
@@ -169,6 +106,9 @@ body::before {
   }
 }
 
+.reveal code {
+  font-family: monospace;
+}
 
 .reveal pre code {
   max-height: 600px;
@@ -265,11 +205,41 @@ ul li {
 }
 
 /* Slides without title */
-#opensouthcode, #python, #definicion, #definicion-2, #definicion-3, #abraza {
+#opensouthcode, #python, #definicion, #definicion-2, #definicion-3, #abraza, #confusion {
   h1, h2, h3, h4 {
     display: none;
   }
 }
+
+/* Quotes */
+#definicion, #definicion-2, #definicion-3, #quejas-sobre-el-nombre {
+  > p {
+    display: none;
+  }
+  blockquote {
+    p, a {
+      font-family: "Trocchi", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    p:first-child {
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    p:nth-child(2) {
+      text-align: right;
+      width: 100%;
+
+      a {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
 
 $blackComplementary: #FFD538;
 
@@ -314,37 +284,23 @@ $blackComplementary: #FFD538;
 
 $purpleComplementary: #C8C24E;
 
-#que-son-los-decoradores, #definicion, #definicion-2, #definicion-3 {
-  strong, a {
-    color: $purpleComplementary;
+#que-son-los-decoradores, #definicion, #definicion-2, #definicion-3, #ejemplos-de-uso, #y-que-es-esto-del-arroba,
+#ejecucion-equivalente, #como-crear-un-decorador, #decorador-basico, #funcion-anonima, #por-que-se-llaman-decoradores,
+#quejas-sobre-el-nombre {
+  h2, h3, h4, li, blockquote {
+    strong, a, code {
+      color: $purpleComplementary;
+    }
+  }
+
+  li code {
+      font-weight: bold;
   }
 }
 
-#definicion, #definicion-2, #definicion-3 {
-  > p {
-    display: none;
-  }
-  blockquote {
-    p, a {
-      font-family: "Trocchi", serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    p:first-child {
-      text-align: left;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-
-    p:nth-child(2) {
-      text-align: right;
-      width: 100%;
-
-      a {
-        margin-right: 30px;
-      }
-    }
+#que-son-los-decoradores {
+  h2, h3 {
+    font-size: 3.7em;
   }
 }
 
@@ -358,163 +314,75 @@ $purpleComplementary: #C8C24E;
   }
 }
 
-#python-3-11  {
-    h2 {
-      color: $linkColor;
-      font-family: "Flux Regular";
-      text-transform: none;
-      font-size: 4em;
-    }
+#y-que-es-esto-del-arroba {
+  font-size: 1.5em;
 }
 
-#python-3-13 {
-  strong {
-    font-size: 12em;
+#anotaciones-de-java-1-5 {
+  h3, strong {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
   }
-}
 
-#python-2-5 {
   h3 {
-    font-family: 'UnifrakturCook', cursive;
-    font-size: 5em;
+    font-size: 4.5em;
     color: #312915;
   }
-}
 
-#mas-rapido {
-  h3 {
-    font-family: 'Racing Sans One', sans-serif;
-    font-size: 5em;
-    text-shadow: #000000 1px 0 10px;
-  }
-}
-
-#id3 {
-  h3 {
-    font-family: 'Racing Sans One', sans-serif;
-    font-size: 4em;
-    text-shadow: #000000 1px 0 10px;
-  }
-}
-
-#listado-de-cambios {
   strong {
-    color: $secondaryColor;
-  }
-
-  ul {
-    li {
-      p {
-        margin: 5px 0;
-        font-size: 0.9em;
-      }
-    }
+    color: #151107;
   }
 }
 
-#gracias {
+#ejecucion-equivalente {
   h3 {
-    font-size: 4em;
-    text-shadow: #000000 1px 0 10px;
+    font-size: 2.1em;
   }
 }
 
-#pep-701-mejorado-uso-de-comillas-en-f-strings {
-  h2 {
-    font-size: 2.5em;
+#como-crear-un-decorador {
+  font-size: 1.2em;
+}
+
+#decorador-basico, #resultado {
+  h3 {
+    font-size: 2.6em;
+  }
+}
+
+#resultado {
+  .code-wrapper {
+    font-size: 0.58em;
+  }
+}
+
+#funcion-anonima {
+  h3 {
+    font-size: 2.7em;
+  }
+}
+
+#por-que-se-llaman-decoradores {
+  h2, h3, h4 {
+    font-size: 3.5em;
+  }
+}
+
+#quejas-sobre-el-nombre {
+  h2, h3, h4 {
+    font-size: 2.7em;
 
     strong {
-      color: $secondaryColor;
-    }
-
-    em {
-      display: block;
-      color: $secondaryColor;
-    }
-  }
-}
-
-#problema-con-las-comillas, #encadenar-f-strings-sin-limite, #uso-de-barra-invertida, #mejoras-en-mensajes-de-error {
-  strong, em {
-    color: $secondaryColor;
-  }
-}
-
-#mejoradas-sugerencias-tal-vez-quisiste-decir-en-los-mensajes-de-error {
-  h2 {
-    font-size: 2.3em;
-
-    em {
-      text-transform: none;
-      color: $secondaryColor;
-      font-family: 'Kalam', cursive;
-      font-size: 1.3em;
-    }
-  }
-}
-
-#nameerror-tal-vez-olvidaste-importar, #nameerror-tal-vez-olvidaste-usar-self,
-#sintaxerror-tal-vez-quisiste-usar-from-import, #importerror-no-se-pudo-importar-tal-vez-quisiste-decir {
-  h3 {
-    text-transform: none;
-    font-family: 'Kalam', cursive;
-    font-size: 3em;
-  }
-
-  strong, em {
-    color: $secondaryColor;
-  }
-
-  em {
-    font-family: 'Kalam', cursive;
-  }
-}
-
-#sintaxerror-tal-vez-quisiste-usar-from-import {
-  em {
-    display: inline-block;
-  }
-}
-
-#typing {
-  h2 {
-    color: #ffffff;
-  }
-}
-
-#pep-695-definir-alias-para-tipos-mediante-type, #uso-de-genericos-en-type, #creacion-de-clases-genericas,
-#creacion-de-clases-genericas-antes, #creacion-de-funciones-genericas,
-#pep-692-utilizar-typeddict-para-anotar-los-kwargs, #pep-698-decorador-override-para-indicar-metodos-que-sobrescriben,
-#pep-684-implementar-un-gil-por-cada-sub-interprete, #pep-669-reducir-el-impacto-de-la-monitorizacion-en-cpython,
-#soporte-para-el-profiler-perf-de-linux, #pep-688-expuesto-el-protocolo-del-buffer-en-python,
-#pep-632-eliminado-paquete-distutils {
-  h2, h3 {
-    font-size: 2.5em;
-
-    code {
-      color: $hotPink;
       display: inline-block;
-      background: $secondaryColor;
-      font-size: 1em;
-      line-height: 1em;
-      padding-bottom: 15px;
-      padding-right: 5px;
-
-      span {
-        font-family: monospace;
-      }
     }
   }
 
-  strong, em {
-    color: $secondaryColor;
-  }
-
-}
-
-#pep-698-decorador-override-para-indicar-metodos-que-sobrescriben {
-  h2 {
-    font-size: 2em;
+  blockquote {
+    strong {
+      font-family: "Trocchi", serif;
+      font-style: normal;
+    }
   }
 }
 

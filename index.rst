@@ -217,26 +217,30 @@ Abraza
 Ejemplos de uso
 ---------------
 
-* Un decorador ``@timeit`` que mide el tiempo de ejecución de una función, sin modificar su código.
-* Un decorador ``@retry`` que vuelve a ejecutar una función si falla, sin modificar su código.
-* Un decorador ``@login_required`` que comprueba si un usuario está autenticado, permitiendo sólo la ejecución de la
-  función si lo está.
-* ... y mucho más.
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
+
+.. revealjs-fragments::
+
+    * Un decorador ``@timeit`` que mide el tiempo de ejecución de una función, sin modificar su código.
+    * Un decorador ``@retry`` que vuelve a ejecutar una función si falla, sin modificar su código.
+    * Un decorador ``@login_required`` que comprueba si un usuario está autenticado, permitiendo sólo la ejecución de la
+      función si lo está.
+    * ... y **mucho más**.
 
 .. revealjs-notes::
 
     ¿Y para qué podemos usar los decoradores? Algunos posibles casos son... (LEER)
 
 
-¿Y qué es esto del arroba?
---------------------------
+¿Y qué es esto del **arroba**?
+------------------------------
 
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
     :data-transition: zoom
 
 
@@ -246,15 +250,12 @@ Ejemplos de uso
 
 
 
-Anotaciones de Java 1.5
------------------------
+Anotaciones de **Java 1.5**
+---------------------------
 
 .. revealjs-section::
     :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
+    :data-background-image: _static/vintage-bg.jpg
     :data-transition: zoom
 
 .. revealjs-notes::
@@ -265,13 +266,19 @@ Anotaciones de Java 1.5
     propuestas, como la barra vertical, similar a un pipe.
 
 
-Ejecución equivalente
----------------------
+Ejecución **equivalente**
+-------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-14|1-6|9-14|13|14
+   :data-line-numbers: 1-16|1-7|10-16|15|16
 
     # Forma con arroba
+
     @decorator
     def hello_world():
         print("Hello world!")
@@ -280,6 +287,7 @@ Ejecución equivalente
 
 
     # Forma sin arroba
+
     def hello_world():
         print("Hello world!")
 
@@ -298,16 +306,13 @@ Ejecución equivalente
 
 
 
-Cómo crear un decorador
-=======================
+Cómo **crear** un **decorador**
+===============================
 
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-notes::
 
@@ -315,9 +320,13 @@ Cómo crear un decorador
 
 
 
-Decorador básico
-----------------
+Decorador **básico**
+--------------------
 
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
    :data-line-numbers: 1-15|1-8|2-7|1,5|3-4|6-7|8|14|2,15
@@ -350,6 +359,11 @@ Decorador básico
 Resultado
 ---------
 
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
+
 .. revealjs-code-block:: python
    :data-line-numbers: 1-3|1|2|3
 
@@ -368,14 +382,23 @@ Resultado
 Confusión
 ---------
 
+.. revealjs-section::
+    :data-background-video: _static/confused.mp4
+    :data-background-video-loop: true
+
 .. revealjs-notes::
 
     Es posible que todavía estéis un poco confusos. Es normal. Seguiremos viéndolo mediante ejemplo, aunque vamos a
     profundizar en la parte que tal vez sea la más complicada, que es la de la función anónima.
 
 
-Función anónima
----------------
+Función **anónima**
+-------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
    :data-line-numbers: 2-6|2|2-6|1,4|7|9
@@ -401,8 +424,13 @@ Función anónima
     wrapper tal cual sin ejecutar (6) para que sea ejecutada con los argumentos que le pasemos.
 
 
-¿Por qué se llaman decoradores?
-===============================
+¿Por qué se llaman **decoradores**?
+===================================
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-notes::
 
@@ -412,8 +440,13 @@ Función anónima
 
 
 
-Quejas sobre el nombre
-----------------------
+Quejas sobre **el nombre**
+--------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 Cita
 

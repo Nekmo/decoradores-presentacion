@@ -33,6 +33,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
 
+    /* Add boxes to the slides */
+    var starBg = document.querySelectorAll("[data-background-hash='0#4e54c8nullnullnullnullnull']");
+    for (var i = 0; i < starBg.length; i++) {
+        console.log(starBg[i]);
+        var div = addDiv(starBg[i], "boxes");
+        for (var j = 0; j < 10; j++) {
+            addDiv(div, "box");
+        }
+    }
+
 //    var starBg = document.querySelectorAll("[data-background-hash='nullauto_static/grid-bg.pngnullnull#ffffffnullrepeat-xleft topnullnull']");
 //    for (var i = 0; i < starBg.length; i++) {
 //        console.log(starBg[i]);

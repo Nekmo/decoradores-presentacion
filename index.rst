@@ -7,9 +7,9 @@
 
 .. _intro:
 
-##########################
-Todo sobre los decoradores
-##########################
+##############################
+Todo sobre los **decoradores**
+##############################
 
 .. revealjs-section::
     :data-background-color: #333333
@@ -87,6 +87,9 @@ Python
     :data-transition-speed: default
     :data-transition: fade
 
+.. image:: images/python-logo.*
+  :width: 400
+
 .. revealjs-notes::
 
     Es por ello que es costumbre que hable aquí de Python, como en esta ocasión. La verdad, llevo ya varios años
@@ -96,16 +99,16 @@ Python
 Decoradores
 ===========
 
+.. revealjs-section::
+    :data-background-color: #4973ff
+    :data-transition-speed: default
+    :data-transition: fade
+
 .. code-block:: python
 
     @decorator
     def function():
         pass
-
-.. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/vintage-bg.jpg
-    :data-transition: zoom
 
 .. revealjs-notes::
 
@@ -115,15 +118,12 @@ Decoradores
 
 
 
-¿Qué son los decoradores?
--------------------------
+¿Qué son los **decoradores**?
+-----------------------------
 
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
     :data-transition: zoom
 
 .. revealjs-notes::
@@ -135,17 +135,17 @@ Decoradores
 Definición
 ----------
 
-Una función que devuelve otra función, normalmente aplicando una transformación de función usando la sintaxis
-``@wrapper``.
--- `Python.org Glosary <https://docs.python.org/3/glossary.html>`_
-
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
+
+Definición
+
+  Una función que devuelve otra función, normalmente aplicando una transformación de función usando la sintaxis
+  @wrapper.
+
+  --`Python.org Glosary <https://docs.python.org/3/glossary.html>`_
 
 .. revealjs-notes::
 
@@ -157,8 +157,37 @@ Una función que devuelve otra función, normalmente aplicando una transformaci�
 Definición 2
 ------------
 
-Un decorador es una "función" que encapsula a otra "función" para modificar o extiender su comportamiento sin modificar
-su código.
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-auto-animate:
+
+Definición
+
+  Un decorador es una "función" que encapsula a otra "función" para modificar o extiender su comportamiento sin modificar
+  su código.
+
+  --`Yo mismo <https://github.com/Nekmo/decoradores-presentacion/>`_
+
+.. revealjs-notes::
+
+    Es por ello, que he preferido traer aquí esta otra (LEER). La parte clave de esta definición, es la de encapsular.
+    Es decir, que la rodea sin alterar su código.
+
+
+Definición 3
+------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-auto-animate:
+
+Definición
+
+  Un decorador es una "función" que encapsula a otra "función" para modificar o extiender su comportamiento sin modificar
+  su código.
+
+  --`Yo mismo <https://github.com/Nekmo/decoradores-presentacion/>`_
 
 .. revealjs-code-block:: python
    :data-line-numbers: 1-3|1|2-3
@@ -167,18 +196,9 @@ su código.
     def function():
         pass
 
-.. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
-
 .. revealjs-notes::
 
-    Es por ello, que he preferido traer aquí esta otra (LEER). La parte clave de esta definición, es la de encapsular.
-    Es decir, que la rodea sin alterar su código. En este ejemplo de aquí tenemos un decorador (1) que rodea a una
+    En este ejemplo de aquí tenemos un decorador (1) que rodea a una
     función sin alterar su código (2). De esta forma, el decorador ya se está aplicando sobre la función.
 
 
@@ -186,12 +206,8 @@ Abraza
 ------
 
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
+    :data-background-video: _static/gf-tacticalhug.mp4
+    :data-background-video-loop: true
 
 .. revealjs-notes::
 
@@ -399,10 +415,13 @@ Función anónima
 Quejas sobre el nombre
 ----------------------
 
-| Ha habido varias quejas sobre la elección del nombre "decorador" para esta función.
-| El principal es que el nombre no concuerda con su uso en el libro de GoF. [...]
-| **Es muy posible que aparezca un nombre mejor.**
-| -- `PEP 318 <https://peps.python.org/pep-0318/>`_
+Cita
+
+  Ha habido varias quejas sobre la elección del nombre "decorador" para esta función.
+  El principal es que el nombre no concuerda con su uso en el libro de GoF. [...]
+  **Es muy posible que aparezca un nombre mejor.**
+
+  -- `PEP 318 <https://peps.python.org/pep-0318/>`_
 
 .. revealjs-notes::
 

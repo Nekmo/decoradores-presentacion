@@ -242,6 +242,18 @@ ul li {
   }
 }
 
+/* Title with shadow */
+#no-solo-funciones, #expertos-en-decoradores {
+  strong {
+    color: $secondaryColor;
+  }
+
+  h2, h3 {
+    font-size: 3.5em;
+    text-shadow: #000000 1px 0 10px;
+  }
+}
+
 
 $blackComplementary: #FFD538;
 
@@ -461,17 +473,6 @@ $purpleComplementary: #C8C24E;
 #decorador-wraps {
   .code-wrapper {
     font-size: 0.9em;
-  }
-}
-
-#no-solo-funciones {
-  strong {
-    color: $secondaryColor;
-  }
-
-  h2, h3 {
-    font-size: 3.5em;
-    text-shadow: #000000 1px 0 10px;
   }
 }
 

@@ -1060,8 +1060,13 @@ Código decorador con parámetros opcionales usando una clase
 
 
 
-Expertos en decoradores
-=======================
+**Expertos** en decoradores
+===========================
+
+.. revealjs-section::
+    :data-background-color: #000000
+    :data-background-video: _static/applause.mp4
+    :data-background-video-loop: true
 
 .. revealjs-notes::
 
@@ -1080,6 +1085,9 @@ Expertos en decoradores
 
     ¡Muchas gracias a todos!
 
+
+Código QR
+=========
 
 
 **Contactar**

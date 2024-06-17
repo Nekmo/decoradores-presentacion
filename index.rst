@@ -52,8 +52,8 @@ OpenSouthCode
 
 .. revealjs-notes::
 
-  Son ya más de 10 años, en los cuales he podido asistir y participar en la mayoría de ellos. Es posible que algunos
-  me conozcáis ya, aunque me presento por si acaso.
+  Son ya más de 10 años, en los cuales he podido asistir y participar en la mayoría de ellos. Es por ello que es posible
+   que algunos me conozcáis ya, aunque me presento por si acaso.
 
 
 
@@ -76,7 +76,7 @@ Sobre mí **Nekmo**
 
 .. revealjs-notes::
 
-  Soy Juan José, más conocido en redes como Nekmo, y llevo programando en Python más de media vida.
+  Soy Juan José, más conocido en redes como Nekmo, y llevo programando en Python ya más de media vida.
 
 
 Python
@@ -92,8 +92,8 @@ Python
 
 .. revealjs-notes::
 
-    Es por ello que es costumbre que hable aquí de Python, como en esta ocasión. La verdad, llevo ya varios años
-    pensando en hacer la charla sobre el tema de hoy...
+    Es por ello que es costumbre que hable aquí de Python, como en esta ocasión, para qué variar. Pero la verdad, llevo
+    ya varios años pensando en hacer la charla sobre el tema de hoy...
 
 
 Decoradores
@@ -112,7 +112,7 @@ Decoradores
 
 .. revealjs-notes::
 
-   Porque, ¿cuántos de vosotros sabríais explicar claramente cómo es un decorador? (PAUSA) ¿y cómo se crean? (PAUSA).
+   Porque, ¿cuántos de vosotros sabríais explicar claramente qué es un decorador? (PAUSA) ¿y cómo se crean? (PAUSA).
    Como imaginaba, mucha gente, a pesar de utilizarlos, no sabrían explicar su funcionamiento, el cual es como una
    caja negra.
 
@@ -149,8 +149,9 @@ Definición
 
 .. revealjs-notes::
 
-   Según la definición oficial de Python, un decorador es una función que devuelve otra función, utilizando el nombre
-   ``@wrapper``. Vale, es posible que esta definición no os haya aclarado mucho...
+   Según la definición oficial de Python, un decorador es una función que devuelve otra función, utilizando
+   habitualmente el nombre ``@wrapper`` para la transformación. Vale, es posible que esta definición no os haya aclarado
+   mucho...
 
 
 
@@ -260,10 +261,10 @@ Anotaciones de **Java 1.5**
 
 .. revealjs-notes::
 
-    Su origen viene de Java 1.5, donde se introdujeron las anotaciones, los cuales eran un uso similar a lo que se
+    Su origen viene de Java 1.5, donde se introdujeron las anotaciones, las cuales eran un uso similar a lo que se
     pretendía con los decoradores de Python, y ya utilizaban el símbolo de arroba. Esto, sumado a que el arroba aún
-    no estaba siendo utilizado en Python, se decidió utilizarlo para los decoradores. No obstante, hubo otras
-    propuestas, como la barra vertical, similar a un pipe.
+    no estaba siendo utilizado en Python, fue por lo que se decidió utilizarlo para los decoradores. No obstante, hubo
+    otras propuestas, como la barra vertical, similar a un pipe.
 
 
 Ejecución **equivalente**
@@ -351,9 +352,9 @@ Decorador **básico**
 
     Bien, (1) aquí tenemos un decorador llamado log, (2) el cual no os asustéis por tener una función dentro de otra.
     Esta función interior, que llamaremos función anónima, es generada dinámicamente por el decorador. (3) Hacemos esto
-    para que tenga acceso a la función original, (4) pudiendo hacer cosas antes, (5) o después de la ejecución de la
-    función original. (6) Finalmente devolvemos la función anónima, (7) la cual sustituirá a hello (8) y ejecutaremos
-    ya no la función hello original, sino la función anónima llamada wrapper.
+    para que tenga acceso a la función original, func, (4) pudiendo hacer cosas antes, (5) o después de la ejecución de
+    la función original. (6) Finalmente devolvemos la función anónima SIN LLAMARLA, (7) la cual sustituirá a hello (8)
+    y ejecutaremos ya no la función hello original, sino la función anónima llamada wrapper.
 
 
 Resultado
@@ -388,8 +389,8 @@ Confusión
 
 .. revealjs-notes::
 
-    Es posible que todavía estéis un poco confusos. Es normal. Seguiremos viéndolo mediante ejemplo, aunque vamos a
-    profundizar en la parte que tal vez sea la más complicada, que es la de la función anónima.
+    Es posible que todavía estéis un poco confusos. Es normal. Seguiremos viéndolo mediante ejemplos, aunque vamos
+    primero a profundizar en la parte que tal vez os sea más complicada, que es la de la función anónima.
 
 
 Función **anónima**
@@ -401,7 +402,7 @@ Función **anónima**
     :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 2-6|2|2-6|1,4|7|9
+   :data-line-numbers: 2-6|2|2-6|1,4|7|9|10|
 
     def log(func):
         def wrapper(*args, **kwargs):
@@ -417,11 +418,11 @@ Función **anónima**
 
 .. revealjs-notes::
 
-    La primera gran duda que surge, (1) es el por qué del nombre. Bien, en realidad se podría llamar wrapper, o de
-    cualquier otra forma, es sólo una convención. (2) ¿Por qué la estamos creando dentro de otra función? (3) Esto es
-    porque queremos que la función anónima tenga acceso a la función original, llamada func, la cual tomará por contexto
-    (4) ¿Por qué devolvemos wrapped tal cual, en vez de ejecutarlo? (5) Porque queremos que se devuelva la función
-    wrapper tal cual sin ejecutar (6) para que sea ejecutada con los argumentos que le pasemos.
+    La primera gran duda que surge de esta función anónima, (1) es el por qué del nombre. Bien, en realidad se podría
+    llamar wrapper, o de cualquier otra forma, es sólo una convención. (2) ¿Por qué la estamos creando dentro de otra
+    función? (3) Esto es porque queremos que la función anónima tenga acceso a la función original, llamada func, la
+    cual tomará por contexto (4) ¿Por qué devolvemos wrapped tal cual, en vez de ejecutarlo? (5) Porque queremos que se
+    devuelva la función wrapper tal cual sin ejecutar (6) para que sea ejecutada con los argumentos que le pasemos.
 
 
 ¿Por qué se llaman **decoradores**?
@@ -435,8 +436,8 @@ Función **anónima**
 .. revealjs-notes::
 
     Ahora que ya sabemos crear decoradores, vamos a hacer una pequeña pausa, tomar un poco de aire, y ver por qué se
-    llaman así. Pues bien, la verdad es que no tiene mucho misterio, ya que se llaman así por el Patrón de Diseño
-    Decorador, que hace esto mismo. Añadir funcionalidades a un objeto sin modificar su código.
+    llaman así. La verdad es que no tiene mucho misterio, ya que se llaman así por el Patrón de Diseño Decorador, que
+    es similar a lo que hacen los decoradores de Python. Añadir funcionalidades a un objeto sin modificar su código.
 
 
 
@@ -458,9 +459,9 @@ Cita
 
 .. revealjs-notes::
 
-    Lo gracioso de esto, es que ya cuando se introdujeron los decoradores en Python, hubo quejas sobre el nombre, ya
-    que no concordaba con el uso del patrón de diseño que les da nombre; esto, según el principal libro de patrones de
-    diseño. Es por ello, que ya en su día se dijo que probablemente apareciese un nombre mejor. Spoiler: no ocurrió.
+    Lo gracioso de esto, es que ya cuando se introdujeron los decoradores en Python hubo quejas sobre el nombre, ya
+    que no concordaba con el uso del patrón que les da nombre; esto, según el principal libro de patrones de diseño. Es
+    por ello, que ya en su día se dijo que probablemente apareciese un nombre mejor. Spoiler: no ocurrió.
 
 
 
@@ -506,7 +507,7 @@ Cita
 
     Aquí tenemos un primer ejemplo, el cual nos permite alterar los parámetros de entrada de una función decorada,
     convirtiéndolos a enteros. (1) La función anónima recibe los parámetros de la función original, (2) los cuales
-    convierte a enteros (4) antes de llamar a la función original con los nuevos parámetros ya convertidos. Podría
+    convierte a enteros (3) antes de llamar a la función original con los nuevos parámetros ya convertidos. Podría
     sernos útil si nuestra función espera enteros, pero por alguna razón, los recibe como cadenas.
 
 
@@ -529,8 +530,9 @@ Cita
 
 .. revealjs-notes::
 
-    En este otro ejemplo, (1) tomamos la salida de la función original, la cual es una diccionario (2)
-    y la envolvemos en un objeto Response, sin necesidad de modificar la función original para ello.
+    En este otro ejemplo, el cual nos permite modificar la salida de la función, (1) tomamos la salida original, la
+    cual es una diccionario (2) y la envolvemos en un objeto Response, sin necesidad de modificar la función original
+    para ello.
 
 
 **Condicionar** la ejecución de la función
@@ -554,7 +556,7 @@ Cita
 
 .. revealjs-notes::
 
-    En este otro ejemplo, (1) estamos condicionando la ejecución de la función original, (2) la cual sólo se ejecutará
+    En este otro caso, (1) estamos condicionando la ejecución de la función original, (2) la cual sólo se ejecutará
     si el usuario está autenticado, (3) devolviendo un error 401 en caso contrario.
 
 
@@ -688,8 +690,8 @@ No sólo **funciones**
 .. revealjs-notes::
 
     En realidad, esta no ha sido la única cosa que os he estado ocultando. ¿Recordáis que definí un decorador como una
-    función que se aplica a una función, usando "comillas"? Pues bien, esto es una simplificación, porque en realidad
-    se puede aplicar y utilizar en cualquier cosa que sea invocable, que se pueda llamar. No sólo a funciones.
+    función que se aplica a una función, y lo dije usando "comillas"? Pues bien, esto es una simplificación, porque en
+    realidad se puede aplicar y utilizar en cualquier cosa que sea invocable, que se pueda llamar. No sólo a funciones.
 
 
 
@@ -712,9 +714,9 @@ Aplicado a **clases**
 .. revealjs-notes::
 
     Por ejemplo, en este caso, (1) estamos aplicando el decorador log a una clase. Si recordáis este decorador de antes,
-    imprimía un mensaje antes y después de la función. En este caso, (1) el mensaje se mostrará antes y después del
-    método __init__ de la clase A. Tened en cuenta eso sí, que la salida de la ejecución de  __init__ no será lo que
-    devuelve la misma, lo cual siempre es None, sino la instancia de la clase. Esto podría utilizarse para hacer cosas
+    imprimía un mensaje antes y después de la función. En nuestro ejemplo, (2) el mensaje se mostrará antes y después
+    del método __init__ de la clase A. Tened en cuenta eso sí, que la salida de la ejecución de  __init__ no será lo que
+    devuelve la misma, la cual siempre es None, sino la instancia de la clase. Esto podría utilizarse para hacer cosas
     como registrar la creación de una instancia, devolver otra instancia en su lugar, o cualquier otra cosa que se os
     ocurra.
 
@@ -740,8 +742,8 @@ Aplicado a **métodos**
 
     Por supuesto, (1) también podemos aplicar el decorador a métodos, comportándose de forma muy similar a como lo
     haría con una función. (2) Tened en cuenta, que entre los parámetros que recibe la función anónima, se encuentra la
-    instancia de la clase, la cual se suele llamar self. Esto nos permite acceder a la instancia entera de la clase
-    desde el decorador, pudiendo hacer lo que queramos en la clase desde el decorador.
+    instancia de la clase, la cual se suele llamar self. Esto nos permite acceder a la instancia entera desde el
+    decorador, para hacer lo que queramos.
 
 
 
@@ -777,8 +779,8 @@ Aplicado a **métodos**
     condición es que sea invocable. En este caso, (2) el init se comporta como la función más por fuera del decorador,
     (3) y el call como la función anónima más por dentro del decorador. Para quienes no lo conozcáis, el método mágico
     call se ejecuta al invocar la instancia de la clase; es decir, cuando utilizamos paréntesis después de ya haber
-    usado paréntesis para instanciar la clase. (4) Y ya como podéis ver, se utiliza exactamente igual que el decorador
-    de antes.
+    usado paréntesis para instanciar la clase. (4) Y ya como podéis ver, se utiliza exactamente igual que los
+    decoradores que hemos visto hasta ahora.
 
 
 Decorador con **argumentos**
@@ -792,8 +794,8 @@ Decorador con **argumentos**
 .. revealjs-notes::
 
     Vale, si me habéis seguido hasta aquí, ante todo enhorabuena. Sé que son muchas cosas en poco tiempo, y que es
-    difícil tanto de asimilar. Sólo os pido un pequeño esfuerzo adicional, porque vamos a complicarlo un poco más.
-    Si hasta ahora puede que os liase un poco la función anónima, ahora vamos a añadirle una capa adicional.
+    difícil asimilar tanto en tan poco tiempo. Sólo os pido un pequeño esfuerzo adicional, porque vamos a complicarlo un
+    poco más. Si hasta ahora puede que os liase un poco la función anónima, ahora vamos a añadirle una capa adicional.
 
 
 
@@ -815,8 +817,9 @@ Ejemplo de decorador con argumentos
 .. revealjs-notes::
 
     Poder poner parámetros a un decorador es una necesidad habitual, que no hemos visto hasta el momento. En este
-    ejemplo, (1) estamos usando el parámetro para definir cuántas veces se va a repetir la ejecución de la función. De
-    esta manera estaremos dando la libertad al usuario de decidir cuántas veces se va a ejecutar la función.
+    ejemplo el decorador repeat, que nos permitirá repetir la ejecución de la función decorada, (1) requiere de un
+    parámetro que le dirá cuántas veces repetir la ejecución. De esta manera estamos dando la libertad al usuario de
+    configurar el decorador.
 
 
 
@@ -859,7 +862,7 @@ Código del decorador con argumentos
     :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-12|2-3|5-7|9-12|7|
+   :data-line-numbers: 1-12|2-3|5-7|9-12|
 
     class Repeat:
         def __init__(self, num_times=3):
@@ -908,7 +911,7 @@ Decorador con parámetros **opcionales**
 
     Ahora llega la parte más complicada, y os prometo que será la última. Con esto, ya sabréis todo lo que necesitáis
     saber de los decoradores. Sólo os pido un último esfuerzo, porque vamos a ver cómo hacer que los parámetros del
-    decorador se puedan poner o no. (1) Aunque esto no es realmente tan importante, a nivel de usuario, es un detalle
+    decorador se puedan poner o no. Aunque esto no es realmente tan importante, a nivel de usuario, es un detalle
     que el decorador se pueda utilizar (1) tanto sin definir el parámetro, como (2) definiéndolo. ¿Y estaréis de acuerdo
     que queda más bonito y limpio, no?
 
@@ -986,7 +989,7 @@ Decorador con parámetros **opcionales**
 .. revealjs-notes::
 
     Para ello, tenemos que hacer un pequeño hack, tenemos que saber en qué situación estamos de las dos anteriores.
-    (1) Si no nos están pasando directamente la función a decorar, es porque se está pasando el parámetro num_times,
+    (1) Si NO nos están pasando directamente la función a decorar, es porque se está pasando el parámetro num_times,
     estamos en la situación con 3 funciones anidadas. (2) En tal caso devolvemos el decorador. (3) Si nos están pasando
     la función, tendremos el parámetro num_times por defecto; estamos en la situación con 2 funciones anidadas. (4) En
     tal caso, el truco que usamos es saltarnos un nivel de anidamiento llamando directamente al decorador con la
@@ -1085,7 +1088,7 @@ Código decorador con parámetros opcionales usando una clase
 
 .. revealjs-notes::
 
-    ¡Muchas gracias a todos!
+    ¡Muchas gracias a todos por llegar hasta aquí!
 
 
 Código QR
@@ -1100,6 +1103,12 @@ Código QR
    :alt: QR
    :width: 600px
    :align: center
+
+.. revealjs-notes::
+
+    Si queréis, tenéis disponible la presentación con su código fuente en GitHub, donde tenéis todos los ejemplos de
+    código para probarlos en casa. Además junto a las diapositivas se encuentran las notas, para que podáis repasarlas
+    con más tiempo.
 
 
 Contactar
@@ -1118,4 +1127,4 @@ Contactar
 
 .. revealjs-notes::
 
-   Aquí tenéis mi contacto si queréis contactar conmigo.
+   Y también, si tenéis alguna duda, aquí tenéis mis formas de contacto.

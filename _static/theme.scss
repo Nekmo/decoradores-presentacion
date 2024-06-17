@@ -32,24 +32,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lora:700);
 @import url(https://fonts.googleapis.com/css2?family=Trocchi&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap);
-
-
-//@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css);
-
-@font-face {
-  font-family: 'Flux Regular';
-  font-style: normal;
-  font-weight: 300;
-  src: url("Flux Regular.otf") format('opentype');
-}
-
-
-//@font-face {
-//  font-family: 'Font Awesome 6 Free';
-//  font-style: normal;
-//  font-weight: 900;
-//  src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/webfonts/fa-solid-900.ttf) format('truetype');
-//}
+@import url(https://fonts.googleapis.com/css2?family=Kalam&display=swap);
 
 
 // store colors in variables
@@ -100,10 +83,6 @@ section.has-light-background {
 
 .reveal *, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   font-family: 'M PLUS 1p', sans-serif;
-
-  .fa-classic, .fa-regular, .fa-solid, .far, .fas {
-    font-family: 'Font Awesome 6 Free';
-  }
 }
 
 .reveal code {
@@ -182,19 +161,6 @@ ul li {
   background: none;
 }
 
-//#intro, #id2 {
-//    h1, h2 {
-//        font-size: 2.5em;
-//    }
-//
-//    strong {
-//      color: $linkColor;
-//      font-family: "Flux Regular";
-//      text-transform: none;
-//      font-size: 1.5em;
-//    }
-//}
-
 @import "animations";
 
 /* Slides with images without background */
@@ -207,7 +173,8 @@ ul li {
 /* Slides without title */
 #opensouthcode, #python, #definicion, #definicion-2, #definicion-3, #abraza, #confusion, #decorador-wraps,
 #ejemplo-de-decorador-con-argumentos, #codigo-del-decorador-con-argumentos,
-#codigo-completo-decorador-con-parametros-opcionales, #codigo-decorador-con-parametros-opcionales-usando-una-clase  {
+#codigo-completo-decorador-con-parametros-opcionales, #codigo-decorador-con-parametros-opcionales-usando-una-clase,
+#codigo-qr {
   h1, h2, h3, h4 {
     display: none;
   }
@@ -311,9 +278,11 @@ $purpleComplementary: #C8C24E;
     }
   }
 
-  li::marker {
-    color: $purpleComplementary;
-    font-weight: bold;
+  ol {
+    li::marker {
+      color: $purpleComplementary;
+      font-weight: bold;
+    }
   }
 
   li code {
@@ -581,28 +550,15 @@ $purpleComplementary: #C8C24E;
   }
 }
 
-div[data-background-hash="0linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);nullnullnullnull"] {
-  	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+#codigo-qr {
+  img {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  }
 }
-
-@keyframes gradient {
-	0% {
-		background-position: 0 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0 50%;
-	}
-}
-
 
 #contactar {
   h2 {
-    color: $sunshine;
+    //color: $sunshine;
   }
 
   ul li {
@@ -611,8 +567,13 @@ div[data-background-hash="0linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #2
     p {
       font-size: 120%;
 
+      a {
+        color: #dedede;
+        font-weight: bold;
+      }
+
       strong {
-        color:  $hotPink;
+        color:  $secondaryColor;
       }
     }
   }

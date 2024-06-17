@@ -472,10 +472,12 @@ Cita
     :data-transition-speed: default
     :data-transition: slide
 
-1. **Alterar** los parámetros de **entrada** a la función.
-2. **Modificar el resultado** de la función.
-3. **Condicionar**, **repetir** o **alterar** la forma de ejecución de la función.
-4. Realizar **acciones antes** o/y **después** de la ejecución de la función.
+.. revealjs-fragments::
+
+    1. **Alterar** los parámetros de **entrada** a la función.
+    2. **Modificar el resultado** de la función.
+    3. **Condicionar**, **repetir** o **alterar** la forma de ejecución de la función.
+    4. Realizar **acciones antes** o/y **después** de la ejecución de la función.
 
 .. revealjs-notes::
 
@@ -1089,17 +1091,24 @@ Código decorador con parámetros opcionales usando una clase
 Código QR
 =========
 
+.. revealjs-section::
+    :data-background-color: #4973ff
+    :data-transition-speed: default
+    :data-transition: none
 
-**Contactar**
--------------
+.. image:: images/qr.png
+   :alt: QR
+   :width: 600px
+   :align: center
+
+
+Contactar
+---------
 
 .. revealjs-section::
-    :data-background-color: #ffffff
-    :data-background-image: _static/grid-bg.png
-    :data-background-repeat: repeat-x
-    :data-background-position: left top
-    :data-background-size: auto
-    :data-transition: zoom
+    :data-background-color: #333333
+    :data-transition: none
+    :data-transition-speed: slow
 
 * 🌐 **Sitio web:** `nekmo.com <https://nekmo.com>`_
 * 📫 **Email:** `contacto@nekmo.com <mailto:contacto@nekmo.com>`_

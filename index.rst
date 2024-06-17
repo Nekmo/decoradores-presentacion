@@ -464,13 +464,18 @@ Cita
 
 
 
-Usos decoradores
-================
+**Usos** decoradores
+====================
 
-1. Alterar los parámetros de entrada a la función.
-2. Modificar el resultado de la función.
-3. Condicionar, repetir o alterar la forma de ejecución de la función.
-4. Realizar acciones antes o/y después de la ejecución de la función.
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
+
+1. **Alterar** los parámetros de **entrada** a la función.
+2. **Modificar el resultado** de la función.
+3. **Condicionar**, **repetir** o **alterar** la forma de ejecución de la función.
+4. Realizar **acciones antes** o/y **después** de la ejecución de la función.
 
 .. revealjs-notes::
 
@@ -478,11 +483,16 @@ Usos decoradores
     de la siguiente forma (LEER).
 
 
-Alterar parámetros de entrada
------------------------------
+**Alterar** parámetros de **entrada**
+-------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-5|2|3|4
+   :data-line-numbers: 1-5|2|3|4|
 
     def int_args(func):
         def wrapper(*numbers):
@@ -498,11 +508,16 @@ Alterar parámetros de entrada
     sernos útil si nuestra función espera enteros, pero por alguna razón, los recibe como cadenas.
 
 
-Modificar la salida de la función
----------------------------------
+**Modificar la salida** de la función
+-------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-5|3|4
+   :data-line-numbers: 1-5|3|4|
 
     def response_data(func):
         def wrapper(*args, **kwargs):
@@ -516,11 +531,16 @@ Modificar la salida de la función
     y la envolvemos en un objeto Response, sin necesidad de modificar la función original para ello.
 
 
-Condicionar la ejecución de la función
---------------------------------------
+**Condicionar** la ejecución de la función
+------------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-7|3-6|3-4|5-6
+   :data-line-numbers: 1-7|3-6|3-4|5-6|1-7
 
     def is_authenticated(func):
         def wrapper(request):
@@ -536,18 +556,24 @@ Condicionar la ejecución de la función
     si el usuario está autenticado, (3) devolviendo un error 401 en caso contrario.
 
 
-Realizar acciones antes y después
----------------------------------
+Realizar **acciones antes** y **después**
+-----------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-8|3|5-6|
+   :data-line-numbers: 1-9|3|5-7|
 
     def timeit(func):
         def wrapper(*args, **kwargs):
             start = time.time()
             result = func(*args, **kwargs)
             end = time.time()
-            print(f"La función {func.__name__} ha tardado {end - start} segundos.")
+            print(f"La función {func.__name__} ha tardado "
+                  f"{end - start} segundos.")
             return result
         return wrapper
 
@@ -558,11 +584,16 @@ Realizar acciones antes y después
     función, mostrando el tiempo que ha tardado en ejecutarse.
 
 
-Encadenar decoradores
-=====================
+**Encadenar** decoradores
+=========================
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-5|3|2|1|8-9
+   :data-line-numbers: 1-5|3|2|1|8-9|
 
     @retry
     @timeit
@@ -584,11 +615,16 @@ Encadenar decoradores
 
 
 
-El decorador wraps
-==================
+El decorador **wraps**
+======================
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-4|6-7|
+   :data-line-numbers: |1-4|6-7|8-9|
 
    >>> @log
    >>> def hello_world():
@@ -605,7 +641,7 @@ El decorador wraps
     Como estáis viendo, los decoradores son la mar de útiles. Y dentro de Python se utilizan para infinidad de cosas,
     entre las cuales, está facilitar la creación de otros decoradores. El decorador wraps, que veremos a continuación,
     soluciona uno de los problemas de los decoradores. ¿Recordáis que dijimos que el decorador devuelve la función
-    anónima wrapper? Pues bien, uno de los problema (1) de aplicar un decorador, en este caso log, es que perdemos (2)
+    anónima wrapper? Pues bien, uno de los problemas (1) de aplicar un decorador, en este caso log, es que perdemos (2)
     el nombre de la función original (3) y su documentación. ¿Cómo podemos solucionar esto? Pues con el decorador wraps.
 
 
@@ -613,8 +649,13 @@ El decorador wraps
 Decorador wraps
 ---------------
 
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
+
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-7|1|4
+   :data-line-numbers: 1-7|1|4|
 
     from functools import wraps
 
@@ -634,22 +675,32 @@ Decorador wraps
 
 
 
-No sólo funciones
-=================
+No sólo **funciones**
+=====================
+
+.. revealjs-section::
+    :data-background-color: #000000
+    :data-background-video: _static/surprise.mp4
+    :data-background-video-loop: true
 
 .. revealjs-notes::
 
     En realidad, esta no ha sido la única cosa que os he estado ocultando. ¿Recordáis que definí un decorador como una
     función que se aplica a una función, usando "comillas"? Pues bien, esto es una simplificación, porque en realidad
-    se puede aplicar y utilizar en cualquier cosa que sea invocable, que se pueda llamar.
+    se puede aplicar y utilizar en cualquier cosa que sea invocable, que se pueda llamar. No sólo a funciones.
 
 
 
-Aplicado a clases
------------------
+Aplicado a **clases**
+---------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-4|1
+   :data-line-numbers: 1-4|1|
 
     @log
     class A:
@@ -667,11 +718,16 @@ Aplicado a clases
 
 
 
-Aplicado a métodos
-------------------
+Aplicado a **métodos**
+----------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-4|2|3
+   :data-line-numbers: 1-4|2|3|
 
     class A:
         @log
@@ -687,11 +743,16 @@ Aplicado a métodos
 
 
 
-Decorador creado usando una clase
----------------------------------
+**Decorador** creado usando una **clase**
+-----------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-13|1-9|2-3|5-9|11-13
+   :data-line-numbers: 1-13|1-9|2-3|5-9|11-13|
 
    >>> class Log:
    ...    def __init__(self, func):
@@ -718,8 +779,13 @@ Decorador creado usando una clase
     de antes.
 
 
-Decorador con argumentos
-========================
+Decorador con **argumentos**
+============================
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-notes::
 
@@ -732,8 +798,13 @@ Decorador con argumentos
 Ejemplo de decorador con argumentos
 -----------------------------------
 
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
+
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-3|1
+   :data-line-numbers: 1-3|1|
 
     @repeat(num_times=5)
     def hello(word):
@@ -750,8 +821,13 @@ Ejemplo de decorador con argumentos
 Código del decorador con argumentos
 -----------------------------------
 
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
+
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-8|1|4|2-7|3-6
+   :data-line-numbers: 1-8|1|4|2-7|3-6|
 
     def repeat(num_times=3):
         def decorator(func):
@@ -772,11 +848,16 @@ Código del decorador con argumentos
     ahora. Sé que es un poco lioso, ya que tenemos varias funciones dentro de otras...
 
 
-Decorador con argumentos usando una clase
------------------------------------------
+**Decorador** con argumentos usando **una clase**
+-------------------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-12|2-3|5-7|9-12|7
+   :data-line-numbers: 1-12|2-3|5-7|9-12|7|
 
     class Repeat:
         def __init__(self, num_times=3):
@@ -800,11 +881,16 @@ Decorador con argumentos usando una clase
 
 
 
-Decorador con parámetros opcionales
------------------------------------
+Decorador con parámetros **opcionales**
+---------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-8|1-3|6-8
+   :data-line-numbers: 1-8|1-3|6-8|
 
     @repeat
     def hello(word):
@@ -826,50 +912,63 @@ Decorador con parámetros opcionales
 
 
 
-Caso 1: sin parámetros
-^^^^^^^^^^^^^^^^^^^^^^
+**Con** y **sin** parámetros
+----------------------------
 
-.. revealjs-code-block:: python
-   :data-line-numbers: 1-6
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-auto-animate:
 
-    def repeat(func):
-        def wrapper(*args, **kwargs):
-            for _ in range(3):
-                result = func(*args, **kwargs)
-            return result
-        return wrapper
+
+.. container:: twocol
+
+    .. container:: leftside
+
+        .. code-block:: python
+
+            def repeat(func):
+                def wrapper(*args, **kwargs):
+                    for _ in range(3):
+                        result = func(
+                            *args, **kwargs
+                        )
+                    return result
+                return wrapper
+            #
+            #
+
+    .. container:: rightside
+
+        .. code-block:: python
+
+            def repeat(num_times=3):
+                def decorator(func):
+                    def wrapper(*args, **kwargs):
+                        for _ in range(num_times):
+                            result = func(
+                                *args, **kwargs
+                            )
+                        return result
+                    return wrapper
+                return decorator
 
 
 .. revealjs-notes::
 
     Para hacer esto, Python no nos lo pone fácil, ya que tenemos que soportar tanto el comportamiento sin parámetros,
-    tal y como lo vimos al principio...
-
-
-
-Caso 2: con parámetros
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. revealjs-code-block:: python
-   :data-line-numbers: 1-8
-
-    def repeat(num_times=3):
-        def decorator(func):
-            def wrapper(*args, **kwargs):
-                for _ in range(num_times):
-                    result = func(*args, **kwargs)
-                return result
-            return wrapper
-        return decorator
-
-.. revealjs-notes::
-
-    Como la forma con parámetros, usando 3 funciones anidadas.
+    tal y como lo vimos al principio, y que tenemos a la izquierda, como la forma con parámetros, que está a la derecha.
+    La diferencia principal entre ambos códigos, como podéis ver, es que a la izquierda tenemos 2 funciones anidadas, y
+    a la derecha 3.
 
 
 
 Condicionar parámetros
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
    :data-line-numbers: 1-8|1,3|4|1,5,6
@@ -894,7 +993,12 @@ Condicionar parámetros
 
 
 Código completo decorador con parámetros opcionales
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
    :data-line-numbers: 1-11
@@ -920,7 +1024,12 @@ Código completo decorador con parámetros opcionales
 
 
 Código decorador con parámetros opcionales usando una clase
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------------------
+
+.. revealjs-section::
+    :data-background-color: #4e54c8
+    :data-transition-speed: default
+    :data-transition: slide
 
 .. revealjs-code-block:: python
    :data-line-numbers: 1-16|2-4|6-11

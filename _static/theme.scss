@@ -205,7 +205,9 @@ ul li {
 }
 
 /* Slides without title */
-#opensouthcode, #python, #definicion, #definicion-2, #definicion-3, #abraza, #confusion {
+#opensouthcode, #python, #definicion, #definicion-2, #definicion-3, #abraza, #confusion, #decorador-wraps,
+#ejemplo-de-decorador-con-argumentos, #codigo-del-decorador-con-argumentos, #caso-1-sin-parametros,
+#caso-2-con-parametros {
   h1, h2, h3, h4 {
     display: none;
   }
@@ -286,11 +288,20 @@ $purpleComplementary: #C8C24E;
 
 #que-son-los-decoradores, #definicion, #definicion-2, #definicion-3, #ejemplos-de-uso, #y-que-es-esto-del-arroba,
 #ejecucion-equivalente, #como-crear-un-decorador, #decorador-basico, #funcion-anonima, #por-que-se-llaman-decoradores,
-#quejas-sobre-el-nombre {
+#quejas-sobre-el-nombre, #usos-decoradores, #alterar-parametros-de-entrada, #modificar-la-salida-de-la-funcion,
+#condicionar-la-ejecucion-de-la-funcion, #realizar-acciones-antes-y-despues, #encadenar-decoradores,
+#el-decorador-wraps, #aplicado-a-clases, #aplicado-a-metodos, #decorador-creado-usando-una-clase,
+#decorador-con-argumentos, #decorador-con-argumentos-usando-una-clase, #decorador-con-parametros-opcionales,
+#con-y-sin-parametros {
   h2, h3, h4, li, blockquote {
     strong, a, code {
       color: $purpleComplementary;
     }
+  }
+
+  li::marker {
+    color: $purpleComplementary;
+    font-weight: bold;
   }
 
   li code {
@@ -383,6 +394,177 @@ $purpleComplementary: #C8C24E;
       font-family: "Trocchi", serif;
       font-style: normal;
     }
+  }
+}
+
+#alterar-parametros-de-entrada {
+  h3 {
+    font-size: 2.4em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#modificar-la-salida-de-la-funcion {
+  h3 {
+    font-size: 2.2em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#condicionar-la-ejecucion-de-la-funcion {
+  h3 {
+    font-size: 1.9em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+
+}
+
+#realizar-acciones-antes-y-despues {
+  h3 {
+    font-size: 2.6em;
+  }
+
+  .code-wrapper {
+    font-size: 0.6em;
+  }
+}
+
+#encadenar-decoradores {
+  h2, h3 {
+      font-size: 3.5em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#el-decorador-wraps {
+  h2, h3 {
+    font-size: 3.3em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#decorador-wraps {
+  .code-wrapper {
+    font-size: 0.9em;
+  }
+}
+
+#no-solo-funciones {
+  strong {
+    color: $secondaryColor;
+  }
+
+  h2, h3 {
+    font-size: 3.5em;
+    text-shadow: #000000 1px 0 10px;
+  }
+}
+
+#aplicado-a-clases {
+  h2, h3 {
+      font-size: 2.6em;
+  }
+
+  .code-wrapper {
+      font-size: 0.8em;
+  }
+}
+
+#aplicado-a-metodos {
+  h2, h3 {
+      font-size: 2.4em;
+  }
+
+  .code-wrapper {
+      font-size: 0.8em;
+  }
+}
+
+#decorador-creado-usando-una-clase {
+  .code-wrapper {
+      font-size: 0.7em;
+  }
+}
+
+#decorador-con-argumentos {
+  h2, h3 {
+      font-size: 3.4em;
+  }
+}
+
+#ejemplo-de-decorador-con-argumentos {
+  .code-wrapper {
+    font-size: 1.3em;
+  }
+}
+
+#codigo-del-decorador-con-argumentos {
+  .code-wrapper {
+    font-size: 0.85em;
+  }
+}
+
+#decorador-con-argumentos-usando-una-clase {
+  h2, h3 {
+    font-size: 1.7em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#decorador-con-parametros-opcionales {
+  h2, h3 {
+    font-size: 2em;
+  }
+
+  .code-wrapper {
+    font-size: 0.9em;
+  }
+}
+
+#con-y-sin-parametros {
+  .twocol {
+    display: flex;
+
+    > div {
+      width: 50%;
+    }
+
+    .leftside {
+      margin-right: 10px;
+
+      .hljs-comment {
+        visibility: hidden;
+      }
+    }
+
+    .rightside {
+        margin-left: 10px;
+    }
+
+    pre {
+      width: 100%;
+      //margin-left: 10px;
+      //margin-right: 10px;
+    }
+
   }
 }
 

@@ -206,8 +206,8 @@ ul li {
 
 /* Slides without title */
 #opensouthcode, #python, #definicion, #definicion-2, #definicion-3, #abraza, #confusion, #decorador-wraps,
-#ejemplo-de-decorador-con-argumentos, #codigo-del-decorador-con-argumentos, #caso-1-sin-parametros,
-#caso-2-con-parametros {
+#ejemplo-de-decorador-con-argumentos, #codigo-del-decorador-con-argumentos,
+#codigo-completo-decorador-con-parametros-opcionales, #codigo-decorador-con-parametros-opcionales-usando-una-clase  {
   h1, h2, h3, h4 {
     display: none;
   }
@@ -292,7 +292,7 @@ $purpleComplementary: #C8C24E;
 #condicionar-la-ejecucion-de-la-funcion, #realizar-acciones-antes-y-despues, #encadenar-decoradores,
 #el-decorador-wraps, #aplicado-a-clases, #aplicado-a-metodos, #decorador-creado-usando-una-clase,
 #decorador-con-argumentos, #decorador-con-argumentos-usando-una-clase, #decorador-con-parametros-opcionales,
-#con-y-sin-parametros {
+#con-y-sin-parametros, #condicionar-parametros {
   h2, h3, h4, li, blockquote {
     strong, a, code {
       color: $purpleComplementary;
@@ -561,10 +561,14 @@ $purpleComplementary: #C8C24E;
 
     pre {
       width: 100%;
-      //margin-left: 10px;
-      //margin-right: 10px;
     }
 
+  }
+}
+
+#codigo-completo-decorador-con-parametros-opcionales, #codigo-decorador-con-parametros-opcionales-usando-una-clase {
+  .code-wrapper {
+      font-size: 0.7em;
   }
 }
 

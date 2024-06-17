@@ -962,8 +962,8 @@ Decorador con parámetros **opcionales**
 
 
 
-Condicionar parámetros
-----------------------
+**Condicionar** parámetros
+--------------------------
 
 .. revealjs-section::
     :data-background-color: #4e54c8
@@ -971,7 +971,7 @@ Condicionar parámetros
     :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-8|1,3|4|1,5,6
+   :data-line-numbers: 1-8|1,4|2,3,5|1,6|2,3,7|
 
     def repeat(_func=None, num_times=3):
         def decorator(func):
@@ -983,12 +983,12 @@ Condicionar parámetros
 
 .. revealjs-notes::
 
-    Para ello, tenemos que hacer un pequeño hack, tenemos que saber en qué situación estamos. (1) Si no nos están
-    pasando directamente la función a decorar, es porque se está pasando el parámetro num_times, estamos en la
-    situación con 3 funciones anidadas. (2) En tal caso devolvemos el decorador. (3) Si nos están pasando la función,
-    es que no se ha dejado el parámetro sin definir, estamos en la situación con 2 funciones anidadas. En tal caso,
-    el truco que usamos es saltarnos un nivel de anidamiento, llamando directamente al decorador con la función a
-    decorar.
+    Para ello, tenemos que hacer un pequeño hack, tenemos que saber en qué situación estamos de las dos anteriores.
+    (1) Si no nos están pasando directamente la función a decorar, es porque se está pasando el parámetro num_times,
+    estamos en la situación con 3 funciones anidadas. (2) En tal caso devolvemos el decorador. (3) Si nos están pasando
+    la función, tendremos el parámetro num_times por defecto; estamos en la situación con 2 funciones anidadas. (4) En
+    tal caso, el truco que usamos es saltarnos un nivel de anidamiento llamando directamente al decorador con la
+    función a decorar.
 
 
 
@@ -1053,10 +1053,10 @@ Código decorador con parámetros opcionales usando una clase
 
 .. revealjs-notes::
 
-    Por supuesto, también lo podemos hacer usando una clase, auqnue el código es un poco diferente. (1) Ya que no
-    podemos poner la condición de nuestro hack en el init, ya que éste no puede devolver nada, (2) lo ponemos en el
-    call, donde decidimos si estamos en la situación con 2 funciones anidadas o con 3 en función de si nos vino la
-    función en el init o no.
+    Por supuesto, también lo podemos hacer usando una clase, aunque el código es un poco diferente. (1) Ya que no
+    podemos poner la condición de nuestro hack en el init, ya que un init no puede devolver nada, (2) por ello lo
+    ponemos en el call, donde decidimos si estamos en la situación con 2 funciones anidadas o con 3 en función de si nos
+    vino la función en el init o no.
 
 
 

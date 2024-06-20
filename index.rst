@@ -302,7 +302,7 @@ Ejecución **equivalente**
     que devuelve otra función? Pues bien, eso es literalmente lo que hace. Así pues, (1) esta primera forma con el
     arroba es equivalente a (2) esta segunda forma sin el arroba. Como podéis ver, (3) el decorador recibe como
     argumento el nombre de la función a decorar, devolviendo una nueva función que reemplaza a la original, pero, y
-    esto es importante, SIN LLAMAR A LA FUNCIÓN, (5) lo cual se hará en la última línea, pudiéndole pasar los
+    esto es importante, SIN LLAMAR A LA FUNCIÓN, (4) lo cual se hará en la última línea, pudiéndole pasar los
     parámetros que queramos.
 
 

@@ -1,0 +1,581 @@
+/**
+  [ sunblind ]
+  A blindingly sunny theme for Reveal.js with Lora + Leto fonts and a colorful border.
+  By Josh Dzielak, https://dzello.com/, License MIT
+  The bold border is optional and requires some HTML. To use it:
+  1. Add 4 divs to your HTML page:
+    <div class="line top"></div>
+    <div class="line bottom"></div>
+    <div class="line left"></div>
+    <div class="line right"></div>
+  2. Set { margin: 0.2 } in the Reveal.js initializer to make sure
+  your presentation content doesn't collide with the frame.
+  Like the theme but don't like the colors? Don't fret. Just change
+  $borderColor and/or $linkColor below to something else and rebuild.
+  Or if you don't want to rebuild the theme just override the .line background
+  property with some CSS:
+  .line {
+    background: <new-color>;
+  }
+*/
+
+// Default mixins and settings -----------------
+@import "./mixins.scss";
+@import "./settings.scss";
+@import "./monokai.scss";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=M+PLUS+1p);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700);
+@import url(https://fonts.googleapis.com/css?family=Lora:700);
+@import url(https://fonts.googleapis.com/css2?family=Trocchi&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Kalam&display=swap);
+
+
+// store colors in variables
+$hotPink: #2b5b84;
+$secondaryColor: #FFD538;
+$sunshine: $hotPink;
+// the color of the thick border surrounding the presention
+$borderColor: $hotPink;
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #363636;
+$headingColor: #141414;
+
+$mainFontSize: 32px;
+$mainFont: 'Lato', serif;
+$headingFont: 'Lora', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 700;
+$linkColor: $hotPink;
+$linkColorHover: lighten( $linkColor, 15% );
+$sunshineColorHover: lighten( $sunshine, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.0em;
+$heading2Size: 1.8em;
+$heading3Size: 1.4em;
+$heading4Size: 1.2em;
+
+section.has-light-background {
+  &, h1, h2, h3, h4, h5, h6 {
+    color: #141414;
+  }
+}
+
+.reveal .controls {
+  right: 50px;
+  bottom: 50px;
+}
+
+
+// Theme template ------------------------------
+@import "./template.scss";
+// ---------------------------------------------
+
+.reveal *, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+.reveal code {
+  font-family: monospace;
+}
+
+.reveal pre code {
+  max-height: 600px;
+}
+
+.reveal pre code span, .reveal pre code table tr td {
+    font-family: monospace;
+   	text-transform: none;
+}
+
+.reveal h2, .reveal h3 {
+  strong {
+    color: $sunshine;
+  }
+}
+
+.reveal h1 {
+    font-size: 3.5em;
+}
+
+.reveal h2 {
+    font-size: 3em;
+}
+
+.reveal h3 {
+    font-size: 2.5em;
+}
+
+.reveal .progress {
+  z-index: 1000;
+  color: darken($sunshine, 25%);
+}
+
+ul li {
+    line-height: 2em;
+}
+
+.has-dark-background {
+    h1, h2, h3 {
+        color: white;
+    }
+
+    ul, p {
+        color: #dedede;
+    }
+
+    strong {
+        color: white;
+    }
+}
+
+.reveal section img {
+    border: 0;
+    box-shadow: 0 0;
+}
+
+.reveal pre code.hljs {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+    padding: 15px;
+}
+
+/* Hidden titles */
+#python-3-13, #python-mas-rapido, #comparativa-velocidad, #saltar-por-la-ventana, #genericos-facil {
+  h1, h2, h3 {
+    display: none;
+  }
+}
+
+/* hide image background in color slides */
+.slides section[data-background-color="#2b5b84"] img {
+  background: none;
+}
+
+@import "animations";
+
+/* Slides with images without background */
+#intro, #opensouthcode, #sobre-mi-nekmo, #python {
+  a img {
+    background: none;
+  }
+}
+
+/* Slides without title */
+#opensouthcode, #python, #definicion, #definicion-2, #definicion-3, #abraza, #confusion, #decorador-wraps,
+#ejemplo-de-decorador-con-argumentos, #codigo-del-decorador-con-argumentos,
+#codigo-completo-decorador-con-parametros-opcionales, #codigo-decorador-con-parametros-opcionales-usando-una-clase,
+#codigo-qr {
+  h1, h2, h3, h4 {
+    display: none;
+  }
+}
+
+/* Quotes */
+#definicion, #definicion-2, #definicion-3, #quejas-sobre-el-nombre {
+  > p {
+    display: none;
+  }
+  blockquote {
+    p, a {
+      font-family: "Trocchi", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    p:first-child {
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    p:nth-child(2) {
+      text-align: right;
+      width: 100%;
+
+      a {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+/* Title with shadow */
+#no-solo-funciones, #expertos-en-decoradores {
+  strong {
+    color: $secondaryColor;
+  }
+
+  h2, h3 {
+    font-size: 3.5em;
+    text-shadow: #000000 1px 0 10px;
+  }
+}
+
+
+$blackComplementary: #FFD538;
+
+#intro {
+  strong {
+    color: $blackComplementary;
+  }
+}
+
+#id1 {
+  h2 {
+    font-size: 4em;
+  }
+}
+
+#sobre-mi-nekmo {
+    h2 {
+        width: 40%;
+        font-size: 2.5em;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 100px;
+        text-align: right;
+        line-height: 0.5em;;
+
+        strong {
+            font-size: 0.3em;
+            color: $secondaryColor;
+        }
+    }
+    table {
+        width: 40%;
+        display: inline-block;
+    }
+}
+
+#decoradores {
+  .code-wrapper {
+    font-size: 1.3em;
+  }
+}
+
+$purpleComplementary: #C8C24E;
+
+#que-son-los-decoradores, #definicion, #definicion-2, #definicion-3, #ejemplos-de-uso, #y-que-es-esto-del-arroba,
+#ejecucion-equivalente, #como-crear-un-decorador, #decorador-basico, #funcion-anonima, #por-que-se-llaman-decoradores,
+#quejas-sobre-el-nombre, #usos-decoradores, #alterar-parametros-de-entrada, #modificar-la-salida-de-la-funcion,
+#condicionar-la-ejecucion-de-la-funcion, #realizar-acciones-antes-y-despues, #encadenar-decoradores,
+#el-decorador-wraps, #aplicado-a-clases, #aplicado-a-metodos, #decorador-creado-usando-una-clase,
+#decorador-con-argumentos, #decorador-con-argumentos-usando-una-clase, #decorador-con-parametros-opcionales,
+#con-y-sin-parametros, #condicionar-parametros {
+  h2, h3, h4, li, blockquote {
+    strong, a, code {
+      color: $purpleComplementary;
+    }
+  }
+
+  ol {
+    li::marker {
+      color: $purpleComplementary;
+      font-weight: bold;
+    }
+  }
+
+  li code {
+      font-weight: bold;
+  }
+}
+
+#que-son-los-decoradores {
+  h2, h3 {
+    font-size: 3.7em;
+  }
+}
+
+#definicion-2, #definicion-3 {
+  blockquote {
+    width: 90%;
+  }
+
+  .code-wrapper {
+    font-size: 1em;
+  }
+}
+
+#y-que-es-esto-del-arroba {
+  font-size: 1.5em;
+}
+
+#anotaciones-de-java-1-5 {
+  h3, strong {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  h3 {
+    font-size: 4.5em;
+    color: #312915;
+  }
+
+  strong {
+    color: #151107;
+  }
+}
+
+#ejecucion-equivalente {
+  h3 {
+    font-size: 2.1em;
+  }
+}
+
+#como-crear-un-decorador {
+  font-size: 1.2em;
+}
+
+#decorador-basico, #resultado {
+  h3 {
+    font-size: 2.6em;
+  }
+}
+
+#resultado {
+  .code-wrapper {
+    font-size: 0.58em;
+  }
+}
+
+#funcion-anonima {
+  h3 {
+    font-size: 2.7em;
+  }
+}
+
+#por-que-se-llaman-decoradores {
+  h2, h3, h4 {
+    font-size: 3.5em;
+  }
+}
+
+#quejas-sobre-el-nombre {
+  h2, h3, h4 {
+    font-size: 2.7em;
+
+    strong {
+      display: inline-block;
+    }
+  }
+
+  blockquote {
+    strong {
+      font-family: "Trocchi", serif;
+      font-style: normal;
+    }
+  }
+}
+
+#alterar-parametros-de-entrada {
+  h3 {
+    font-size: 2.4em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#modificar-la-salida-de-la-funcion {
+  h3 {
+    font-size: 2.2em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#condicionar-la-ejecucion-de-la-funcion {
+  h3 {
+    font-size: 1.9em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+
+}
+
+#realizar-acciones-antes-y-despues {
+  h3 {
+    font-size: 2.6em;
+  }
+
+  .code-wrapper {
+    font-size: 0.6em;
+  }
+}
+
+#encadenar-decoradores {
+  h2, h3 {
+      font-size: 3.5em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#el-decorador-wraps {
+  h2, h3 {
+    font-size: 3.3em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#decorador-wraps {
+  .code-wrapper {
+    font-size: 0.9em;
+  }
+}
+
+#aplicado-a-clases {
+  h2, h3 {
+      font-size: 2.6em;
+  }
+
+  .code-wrapper {
+      font-size: 0.8em;
+  }
+}
+
+#aplicado-a-metodos {
+  h2, h3 {
+      font-size: 2.4em;
+  }
+
+  .code-wrapper {
+      font-size: 0.8em;
+  }
+}
+
+#decorador-creado-usando-una-clase {
+  .code-wrapper {
+      font-size: 0.7em;
+  }
+}
+
+#decorador-con-argumentos {
+  h2, h3 {
+      font-size: 3.4em;
+  }
+}
+
+#ejemplo-de-decorador-con-argumentos {
+  .code-wrapper {
+    font-size: 1.3em;
+  }
+}
+
+#codigo-del-decorador-con-argumentos {
+  .code-wrapper {
+    font-size: 0.85em;
+  }
+}
+
+#decorador-con-argumentos-usando-una-clase {
+  h2, h3 {
+    font-size: 1.7em;
+  }
+
+  .code-wrapper {
+    font-size: 0.7em;
+  }
+}
+
+#decorador-con-parametros-opcionales {
+  h2, h3 {
+    font-size: 2em;
+  }
+
+  .code-wrapper {
+    font-size: 0.9em;
+  }
+}
+
+#con-y-sin-parametros {
+  .twocol {
+    display: flex;
+
+    > div {
+      width: 50%;
+    }
+
+    .leftside {
+      margin-right: 10px;
+
+      .hljs-comment {
+        visibility: hidden;
+      }
+    }
+
+    .rightside {
+        margin-left: 10px;
+    }
+
+    pre {
+      width: 100%;
+    }
+
+  }
+}
+
+#codigo-completo-decorador-con-parametros-opcionales, #codigo-decorador-con-parametros-opcionales-usando-una-clase {
+  .code-wrapper {
+      font-size: 0.7em;
+  }
+}
+
+#muchas-gracias-a-todos {
+  h2 {
+    color: white;
+    font-family: 'Kalam', cursive;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  }
+}
+
+#codigo-qr {
+  img {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  }
+}
+
+#contactar {
+  h2 {
+    //color: $sunshine;
+  }
+
+  ul li {
+    list-style: none;
+
+    p {
+      font-size: 120%;
+
+      a {
+        color: #dedede;
+        font-weight: bold;
+      }
+
+      strong {
+        color:  $secondaryColor;
+      }
+    }
+  }
+}
+

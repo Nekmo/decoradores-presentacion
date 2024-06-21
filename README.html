@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <title>Todo sobre los decoradores de Python</title>
+    <link rel="stylesheet" type="text/css" href="_static/revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="_static/revealjs4/dist/theme/.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme.css" />
+    <script src="_static/main.js"></script>
+    <link rel="prev" title="Todo sobre los decoradores" href="index.html" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  </head><body>
+    <div class="reveal">
+        <div class="slides" role="main">
+            <a class="reference internal image-reference" href="https://raw.githubusercontent.com/Nekmo/decoradores-presentacion/master/logo.png"><img alt="https://raw.githubusercontent.com/Nekmo/decoradores-presentacion/master/logo.png" src="https://raw.githubusercontent.com/Nekmo/decoradores-presentacion/master/logo.png" style="width: 100%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference external image-reference" href="https://github.com/Nekmo/decoradores-presentacion/actions?query=workflow%3ABuild"><img alt="Latest CI build status" src="https://img.shields.io/github/actions/workflow/status/Nekmo/decoradores-presentacion/build.yml?style=flat-square&amp;branch=master" /></a>
+<section  id="todo-sobre-los-decoradores-de-python">
+<h1>Todo sobre los decoradores de Python</h1>
+<p>En esta presentación vengo a hablar sobre decoradores de Python. Todo. Absolutamente todo lo que puedas saber. Lo que
+querías conocer y lo que no. Desde su historia a sus entresijos. Da igual tu nivel, de aquí saldrás sabiendo cómo
+funcionan, cómo se usan y cómo crear tus propios decoradores.</p>
+<p>La presentación está <a class="reference external" href="https://nekmo.github.io/decoradores-presentacion/">disponible online</a> ya compilada
+para su visualización.</p>
+</section>
+<section  id="requisitos-y-contenido">
+<h2>Requisitos y contenido</h2>
+<p>El único requisito para charla es conocer lo básico de Python, pero profundizaremos bastante en la materia, por lo que
+también es ideal para aquellos interesados en ampliar sus conocimientos. En esta presentación veremos:</p>
+<ul class="simple">
+<li><p>Definición de decorador.</p></li>
+<li><p>El origen del símbolo arroba de los decoradores.</p></li>
+<li><p>El origen del nombre decorador.</p></li>
+<li><p>Uso alternativo de los decoradores.</p></li>
+<li><p>Casos de uso.</p></li>
+<li><p>Encadenar decoradores.</p></li>
+<li><p>Creación de un decorador básico.</p></li>
+<li><p>El decorador wraps.</p></li>
+<li><p>Ejemplos prácticos con código.</p></li>
+<li><p>Aplicación en clases y métodos.</p></li>
+<li><p>Crear decoradores usando una clase.</p></li>
+<li><p>Decorador con parámetros.</p></li>
+<li><p>Decorador con parámetros opcionales.</p></li>
+</ul>
+</section>
+<section  id="motivacion">
+<h2>Motivación</h2>
+<p>Los decoradores son una característica del lenguaje que aunque muy utilizada, no muchos entienden su funcionamiento.
+Con esta presentación se pretende que tanto los usuarios más nuevos como los más veteranos aprendan algo nuevo. Es
+adecuada para todos los niveles:</p>
+<ul class="simple">
+<li><p>Los que están comenzando en el lenguaje descubrirán esta funcionalidad y cómo funciona.</p></li>
+<li><p>Aquellos con un nivel intermedio aprenderán nuevas formas de hacer decoradores.</p></li>
+<li><p>Los más avanzados aprenderán curiosidades sobre el origen de los mismos.</p></li>
+</ul>
+<p>No son necesarios conocimientos previos para acudir a la charla, más que conocer lo básico del lenguaje. Ni siquiera es
+necesario conocer los decoradores. Al ser una funcionalidad tan utilizada pero tan poco entendida (para muchos, su
+funcionamiento es similar a la magia), propongo esta charla para ahondar en su uso.</p>
+</section>
+<section  id="acerca-de">
+<h2>Acerca de</h2>
+<p>Presentación para <a class="reference external" href="https://www.opensouthcode.org/">OpenSouthCode</a> el día 21 de junio de 2024. Puedes
+utilizar esta misma presentación, íntegra o con modificaciones para cualquiera de los usos descritos en la licencia
+MIT adjunta en este proyecto.</p>
+</section>
+<section>
+<section  id="compilacion">
+<h2>Compilación</h2>
+<p>Para compilar desde el código fuente se requiere Python 3 instalado, estando probado sólo bajo Python 3.12. Se
+recomienda ejecutar los siguientes pasos en un
+<a class="reference external" href="https://nekmo.com/es/blog/python-virtualenvs-y-virtualenvwrapper/">virtualenv</a>:</p>
+<pre data-id="compilacion"><code data-trim data-noescape class="default"># Clonar proyecto
+git clone https://github.com/Nekmo/decoradores-presentacion.git
+cd decoradores-presentacion
+# Instalar dependencias
+pip install -r requirements.txt
+# Compilar ficheros de estilos
+sassc _static/theme.scss _static/theme.css
+# Compilar presentación
+make revealjs</code></pre>
+<p>Tras la compilación puede verse los ficheros resultantes en el directorio <code class="docutils literal notranslate"><span class="pre">_build</span></code>.</p>
+</section>
+<section  id="copyright">
+<h3>Copyright</h3>
+<p>Licencia MIT. Ver fichero <code class="docutils literal notranslate"><span class="pre">LICENSE.txt</span></code>.</p>
+<p>Nekmo 2024.</p>
+</section>
+</section>
+
+        </div>
+    </div>
+    
+    <script src="_static/revealjs4/dist/reveal.js"></script>
+    
+    
+      <script src="_static/revealjs4/plugin/notes/notes.js"></script>
+      <script src="_static/revealjs4/plugin/highlight/highlight.js"></script>
+      
+    
+    <script>
+        var revealjsConfig = new Object();
+        Object.assign(revealjsConfig, 
+    {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        margin: 0.2,        
+        transition: "slide",
+    }
+);
+        
+        
+        
+          revealjsConfig.plugins = [
+            RevealNotes,RevealHighlight,
+          ];
+        
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize(revealjsConfig);
+    </script>
+
+  </body>
+</html>

@@ -317,7 +317,8 @@ Cómo **crear** un **decorador**
 
 .. revealjs-notes::
 
-    Pero, ¿cómo funcionan los decoradores? Lo mejor para entenderlo, es creando nosotros uno propio.
+    Y ahora que hemos visto cómo aplicarlos, seguramente os estéis preguntando... ¿Cómo funcionan? Lo mejor para
+    entenderlo, es creando nosotros uno propio.
 
 
 
@@ -330,7 +331,7 @@ Decorador **básico**
     :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-15|1-8|2-7|1,5|3-4|6-7|8|14|2,15
+   :data-line-numbers: 1-15|1-8|2-7|1,5|3-4|6-7|8|14|2,15|
 
     def log(func):
         def wrapper(*args, **kwargs):
@@ -346,7 +347,7 @@ Decorador **básico**
         return True
 
     hello = log(hello)
-    hello("word")
+    hello("world")
 
 .. revealjs-notes::
 
@@ -704,7 +705,7 @@ Aplicado a **clases**
     :data-transition: slide
 
 .. revealjs-code-block:: python
-   :data-line-numbers: 1-4|1|
+   :data-line-numbers: 1-4|1|3-4|
 
     @log
     class A:
